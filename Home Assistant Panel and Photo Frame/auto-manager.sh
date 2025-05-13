@@ -1,15 +1,15 @@
 #!/bin/bash
 sleep 5
 
-unclutter &
-# Start feh-killer script in the background (kills feh on touch)
-bash touch-to-kill-feh.sh &
-#sleep 2
-# Start feh-resurrect script in the background (restarts feh every 15 mins)
-bash auto-restart-feh.sh &
-sleep 2
-# Start chromium
-bash start-kiosk.sh &
+# Start feh-killer (logs optional)
+nohup bash /home/rob/touch-to-kill-feh.sh > /home/rob/logs/feh-killer.log 2>&1 &
 
-# Keep script running to prevent termination
-wait
+sleep 2
+
+# Start feh auto-restart (every 15 min)
+nohup bash /home/rob/auto-restart-feh.sh > /home/rob/logs/feh-resurrect.log 2>&1 &
+
+# Start Chromium in kiosk mode
+nohup bash /home/rob/start-kiosk.sh > /home/rob/logs/chromium.log 2>&1 &
+
+exit 0
