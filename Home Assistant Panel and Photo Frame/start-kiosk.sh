@@ -7,6 +7,6 @@ URL="http://0.0.0.0:8123/remote-control-panel/0"
 pkill -o -f chromium
 sleep 2
 
-chromium-browser --kiosk --disable-pinch --disable-translate --noerrdialogs --disable-infobars --disable-session-crashed-bubble --disble-component-update --app="http://0.0.0.0:8123/remote-control-panel/0"
+chromium-browser --kiosk --disable-pinch --disable-translate --noerrdialogs --disable-infobars --disable-session-crashed-bubble --disable-component-update --app="http://0.0.0.0:8123/remote-control-panel/0"
 
 
